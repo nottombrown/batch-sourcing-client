@@ -39,8 +39,12 @@ class Source
   end
 end
 
-CSV.open("data/leads.csv", "w") do |csv|
+CSV.open("data/leads.csv", "w") do |output_csv|
   emails = ["tom@joingrouper.com", "info@eribium.org"]
-  csv << Source.columns
-  emails.each { |email| Source.new(email, csv).run! }
+  output_csv << Source.columns
+
+  CSV.foreach(ARGV[0]) do |row|
+    email = row.first
+    Source.new(email, output_csv).run!
+  end
 end

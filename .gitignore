@@ -4,4 +4,5 @@
 # Local environment variables
 .env
 
-data
+data/leads.csv
+data/emails.csv

@@ -42,7 +42,6 @@ class Source
 end
 
 CSV.open("data/leads.csv", "w") do |output_csv|
-  emails = ["tom@joingrouper.com", "info@eribium.org"]
   output_csv << Source.columns
 
   emails = []

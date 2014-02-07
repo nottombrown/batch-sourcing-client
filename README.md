@@ -4,6 +4,8 @@ Place `SOURCING_KEY` from [the accounts page](https://sourcing.io/profile) in `.
 
 Point it at a csv file of emails (each separated by a newline)
 
+Tested with ruby 2.1.0
+
 ```bash
 bundle
 bundle exec ruby sourcing.rb data/example_emails.csv

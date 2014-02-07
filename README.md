@@ -9,4 +9,9 @@ bundle
 bundle exec ruby sourcing.rb data/example_emails.csv
 ```
 
+test it with
+```bash
+bundle exec ruby test_sourcing.rb
+```
+
 This will create a csv of the candidates at `data/leads.csv`

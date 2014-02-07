@@ -25,6 +25,9 @@ class Source
   private
   def person
     @person ||= Sourcing::Person[email: @email]
+  rescue Nestful::SSLError
+    p "SSL Error - retrying"
+    person
   end
 
   def valid_email?

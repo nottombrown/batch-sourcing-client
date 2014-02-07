@@ -11,7 +11,7 @@ CSV.open("emails.csv", "w") do |csv|
   Member.joins(:crews).
     where("crews.created_at > ?", 12.months.ago). # Went recently
     where("members.created_at > ?", max_date). # Skip people we've looked at
-    where("city_id = ?", 1). # In nyc
+    # where("city_id = ?", 1). # In nyc
     uniq.
     find_each do |m|
       # Write the email to our csv

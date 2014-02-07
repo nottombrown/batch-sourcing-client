@@ -8,7 +8,7 @@ CSV.open("data/leads.csv", "w") do |output_csv|
   emails = []
   CSV.foreach(ARGV[0]) { |row| emails << row.first }
 
-  Parallel.each(emails, in_threads: 10) do |email|
+  Parallel.each(emails, in_threads: 0) do |email|
     Source.new(email, output_csv).run!
   end
 end

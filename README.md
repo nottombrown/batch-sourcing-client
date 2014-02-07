@@ -1,4 +1,4 @@
-Request Sourcing.io for scores for a set of emails, filter by rubyists
+Turns a set of emails into a set of github accounts. Filters by ruby/rails experts.
 
 Place `SOURCING_KEY` from [the accounts page](https://sourcing.io/profile) in `.env`
 

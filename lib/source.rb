@@ -15,6 +15,7 @@ class Source
   # Checks if the person is what we're looking for and adds them to
   def run!
     p "Looking up info for #{@email}"
+    return unless valid_email?
     add_to_csv if person && skilled?
   end
 
@@ -25,6 +26,10 @@ class Source
   private
   def person
     @person ||= Sourcing::Person[email: @email]
+  end
+
+  def valid_email?
+    @email =~ /\@/
   end
 
   def add_to_csv
